@@ -1,0 +1,65 @@
+{
+  "name": "mapbox-assist",
+  "version": "1.0.0",
+  "main": "dist/mapbox-assist.min.js",
+  "module": "dist/mapbox-assist.esm.js",
+  "exports": {
+    "types": "./dist/index.d.ts",
+    "import": "./dist/mapbox-assist.esm.js",
+    "require": "./dist/mapbox-assist.min.js"
+  },
+  "scripts": {
+    "build": "node build.js",
+    "start": "node dist/mapbox-assist.esm.js"
+  },
+  "prepare": "ts-node build.ts",
+  "keywords": [
+    "mapbox",
+    "map",
+    "mapping",
+    "mapbox-assist",
+    "gis",
+    "geospatial",
+    "outdoor",
+    "recreational",
+    "hiking",
+    "biking",
+    "cycling",
+    "walking",
+    "backcountry",
+    "backcountry climbing",
+    "backcountry mountaineering",
+    "backcountry hiking",
+    "backcountry biking",
+    "backcountry cycling",
+    "backcountry walking"
+  ],
+  "author": "Richard Allen (enzedonline.com)",
+  "license": "CC-BY-NC-4.0",
+  "type": "module",
+  "types": "dist/index.d.ts",
+  "description": "",
+  "devDependencies": {
+    "@types/node": "^22.13.9",
+    "chart.js": "^4.4.8",
+    "esbuild": "^0.25.0",
+    "mapbox-gl": "^3.10.0",
+    "rimraf": "^6.0.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.2"
+  },
+  "peerDependencies": {
+    "mapbox-gl": "^3.10.0"
+  },
+  "contributors": [
+    {
+      "name": "Richard Allen",
+      "email": "enzedonline@users.noreply.github.com",
+      "url": "https://github.com/enzedonline"
+    }
+  ],
+  "dependencies": {
+    "chart.js": "^4.4.0",
+    "deepmerge": "^4.3.1"
+  }
+}

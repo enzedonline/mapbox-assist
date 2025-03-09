@@ -1,0 +1,51 @@
+# Source code
+src/
+tests/
+examples/
+docs/
+
+# Configuration files
+.gitignore
+.npmignore
+tsconfig.json
+jest.config.js
+.eslintrc
+.prettierrc
+.editorconfig
+*.config.js
+
+# Development tools
+.vscode/
+.idea/
+.github/
+
+# Test files
+*.spec.ts
+*.test.ts
+coverage/
+.nyc_output/
+
+# Documentation
+README.md
+CHANGELOG.md
+LICENSE
+docs/
+
+# TypeScript source maps
+*.map
+
+# Debug files
+*.log
+npm-debug.log*
+
+# Environment files
+.env*
+
+# Build process
+scripts/
+webpack.config.js
+rollup.config.js
+
+# Temporary files
+.DS_Store
+Thumbs.db

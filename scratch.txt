@@ -1,0 +1,30 @@
+// Define center and radius
+const center = [174.7762, -41.2865]; // Example: Wellington, NZ (Lng, Lat)
+const radiusKm = 5; // Radius in kilometers
+
+// Convert radius to bounding box
+const earthRadiusKm = 6371; // Earth's radius in km
+const angularDistance = radiusKm / earthRadiusKm;
+
+// Calculate bounding box (using approximate latitude and longitude deltas)
+const latDiff = (angularDistance * 180) / Math.PI;
+const lonDiff = latDiff / Math.cos(center[1] * (Math.PI / 180)); // Adjust for latitude
+
+const bounds = [
+    [center[0] - lonDiff, center[1] - latDiff], // Southwest corner
+    [center[0] + lonDiff, center[1] + latDiff]  // Northeast corner
+];
+
+// Initialize the map
+const map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v11',
+    bounds: bounds,
+    fitBoundsOptions: { padding: 20 } // Adjust padding as needed
+});
+
+// determine if 3D already enabled
+function has3DTerrain(map) {
+    const style = map.getStyle();
+    return Object.values(style.sources).some(source => source.type === 'raster-dem');
+}
